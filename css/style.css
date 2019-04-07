@@ -328,18 +328,6 @@ footer div.foot{
         background:black;
     }
 
-    /*form of the contact page*/
-    table.contact{
-       background-color: #ffffff;
-       border: 1px solid black;
-       opacity: 0.8;
-       filter: alpha(opacity=85); /* For IE8 and earlier */
-       width:400px;
-       margin:20px auto;   
-       left: 250px;
-       margin: 30px;   
-    }
-
     td.top{
        text-align: center;
        margin: 0 auto;
@@ -353,19 +341,6 @@ footer div.foot{
     td.two{
        text-align: left;
        margin: 0 auto;
-    }
-
-    img#captcha{
-       text-align: left;
-       margin: 0 auto;
-    }
-
-    /*submit button of the contact page*/
-    #action{
-       width:100px;
-       height:40px;   
-       border-radius: 15px 15px 15px 15px;
-       background:#37a4d9;
     }
 
     main{
