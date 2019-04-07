@@ -1,0 +1,535 @@
+/*general*/
+* {
+    margin:0;
+    padding:0;
+    font: sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #000;
+}
+
+footer {  
+  width: 100%;
+   float:left;
+   clear: both;
+   -moz-box-shadow: 2px 2px 2px #000;
+   -webkit-box-shadow: 0px 2px 2px #000;
+   border-radius: 5px;
+   text-align: center;
+   background-color:gray;
+   opacity: 0.8;
+   color: #000;  
+   bottom: 3px;   
+}
+
+footer div.foot{
+   width: 100%;
+   float:left;
+   clear: both;
+   -moz-box-shadow: 2px 2px 2px #000;
+   -webkit-box-shadow: 0px 2px 2px #000;
+   border-radius: 5px;
+   text-align: center;
+   background-color:gray;   
+   bottom: 10px;
+   color: #000;
+   position: fixed;   
+}
+
+    .main-introduction{
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+
+    .main-scale{
+        margin-top: 16%;
+        margin-left: 10%;
+    }
+
+    .main-tunning{
+        margin-top: 20%;
+        margin-left: 10%;
+    }
+
+    .main-chords{
+        margin-top: 20%;
+        margin-left: 10%;
+    }
+
+
+ /*to be more readable the text*/
+
+    form.transbox{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.8;
+        filter: alpha(opacity=85); /* For IE8 and earlier */
+        padding: 10px;
+    }
+
+    .button {
+        background-color: #37a4d9; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .button-delete {
+        background-color: #a50000; /* red */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+    p.transbox{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.8;
+        filter: alpha(opacity=85); /* For IE8 and earlier */
+        padding: 10px;
+    }
+
+    ul.transbox{
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.8;
+        filter: alpha(opacity=85); /* For IE8 and earlier */
+        padding: 10px;
+    }
+
+    h1.transbox{
+        top: 80%;
+        margin-top: 20%;
+        background-color:black ;
+        border: 4px solid #ffffff;
+        color: #ffffff;
+        opacity: 0.7;
+        filter: alpha(opacity=85);
+        padding: 10px;
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+    }
+
+    h2.transbox{
+        background-color:black ;
+        border: 4px solid #ffffff;
+        color: #ffffff;
+        opacity: 0.7;
+        filter: alpha(opacity=85);
+        padding: 10px;
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+    }
+
+    h3.transbox{
+        background-color:black ;
+        border: 4px solid #ffffff;
+        color: #ffffff;
+        opacity: 0.7;
+        filter: alpha(opacity=85);
+        padding: 10px;
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+    }
+    
+    .main-othertunning table{        
+        margin-right: 0;
+        border: 1px solid rgba(28,64,236,.5);        
+    }
+
+@media only screen and (min-width:769px){
+   
+    
+    /*this is to smooth the image of the chords*/
+    img.chords{
+        filter:alpha(opacity=80);    
+        opacity:0.80; 
+        -webkit-transition: all .8s ease;
+        -moz-transition: all .8s ease;
+        -ms-transition: all .8s ease;
+        -o-transition: all .8s ease;
+        transition: all .8s ease;
+        position: relative;
+
+        -webkit-transition: width .8s, height .8s; /* For Safari 3.1 to 6.0 */
+        transition: width .8s, height .8s;
+        width: 80%;
+        height: 80%;
+    }
+
+    /*when the mouse is over the image the image will have opacity 100%*/
+    img.chords:hover{
+        opacity: 1.0;
+        width: 100%;
+        height: 100%;
+        filter: alpha(opacity=100);    
+    }
+
+    header {
+        margin-top:10px;
+        width: 100%;
+        overflow: hidden;
+        height: 160px;
+        position: relative;
+    }
+    
+    body {     
+        background-image: url("../media/backgroundGuitar.jpg");
+        background-color: #cccccc;
+        width: 100%;	    
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    nav {
+        top:-30px;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:20px auto;
+        max-width:1000px;
+        width:90%;
+    }
+
+    /*form contact*/
+    form {
+        display: inline-block;
+        margin:20px auto;
+    }
+
+    /*menu*/
+    nav ul {
+        list-style:none;
+        display:table;	
+        width:100%;
+        background:#000;
+        position:relative;
+    }
+
+    /*menu item*/
+    nav ul li {
+        display:table-cell;
+    }
+
+    /*menu item over mouse*/
+    nav ul li:hover ul {
+        display:block;
+        height:100%;
+    }
+
+    /*block of the sub menus*/
+    nav ul li ul {
+        display:block;
+        position:absolute;
+        background:#000;
+        left:0;
+        right:0;
+        overflow:hidden;
+        height:0%;
+        -webkit-transition: all .8s ease;
+        -moz-transition: all .8s ease;
+        -ms-transition: all .8s ease;
+        -o-transition: all .8s ease;
+        transition: all .8s ease;
+    }
+
+    /*links of the item menus*/
+    nav ul li a {
+        color:#fff;
+        display:block;
+        /*size of icon block*/
+        line-height:30px;
+        padding:20px;
+        position: relative;
+        text-align:center;
+        text-decoration:none;
+        -webkit-transition: all .8s ease;
+        -moz-transition: all .8s ease;
+        -ms-transition: all .8s ease;
+        -o-transition: all .8s ease;
+        transition: all .8s ease;
+    }
+
+    /*mouse over link of the item of the submenu*/
+    nav ul li ul li a:hover {
+        background:#5da5a2;
+    }
+
+    /*link of the item of the menu*/
+    nav ul li a span {
+        background:#174459;
+        display:block;
+        height:100%;
+        width:100%;
+        left:0;
+        position:absolute;
+        /*initial position of the icon*/
+        top:-55px;
+        -webkit-transition: all .8s ease;
+        -moz-transition: all .8s ease;
+        -ms-transition: all .8s ease;
+        -o-transition: all .8s ease;
+        transition: all .8s ease;
+    }
+
+    /*icon from the menu*/
+    nav ul li a span .icon {
+        display:block;
+        /*position of the icon*/
+       line-height:65px;
+    }
+
+    /*mouse over item in the menu*/
+    nav ul li a:hover span {
+        top:0;
+    }
+
+    /*Colors from each block of the menu*/
+    nav ul li span.first {
+        background:#0e5061;
+    }
+
+    nav ul li span.second {
+        background:#5da5a2;
+    }
+
+    nav ul li span.third {
+        background:#f25724;
+    }
+
+    nav ul li span.forth {
+        background:#174459;
+    }
+
+    nav ul li span.fifth {
+        background:#37a4d9;
+    }
+
+    nav ul li span.main {
+        background-color: black;
+        background:black;
+    }
+
+    /*form of the contact page*/
+    table.contact{
+       background-color: #ffffff;
+       border: 1px solid black;
+       opacity: 0.8;
+       filter: alpha(opacity=85); /* For IE8 and earlier */
+       width:400px;
+       margin:20px auto;   
+       left: 250px;
+       margin: 30px;   
+    }
+
+    td.top{
+       text-align: center;
+       margin: 0 auto;
+    }
+
+    td.one{
+       text-align: left;
+       margin: 0 auto;
+    }
+
+    td.two{
+       text-align: left;
+       margin: 0 auto;
+    }
+
+    img#captcha{
+       text-align: left;
+       margin: 0 auto;
+    }
+
+    /*submit button of the contact page*/
+    #action{
+       width:100px;
+       height:40px;   
+       border-radius: 15px 15px 15px 15px;
+       background:#37a4d9;
+    }
+
+    main{
+        text-align: center;
+        width: 850px;
+        margin-left: 50px; 
+        margin-right: 50px;
+        margin: 0 auto;
+    }
+    
+    .menu_bar {
+        display: none;
+    }
+    
+    
+}
+
+@media screen and (max-width: 768px){
+    
+    /*this is to smooth the image of the chords*/
+    img.chords{
+        width: 100px;
+        height: 100px;
+        -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+        transition: width 2s, height 4s;
+        /* filter:alpha(opacity=80);    
+        opacity:0.80;
+        transition: width 2s, height 2s;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .8s ease;
+        -moz-transition: all .8s ease;
+        -ms-transition: all .8s ease;
+        -o-transition: all .8s ease;
+        transition: all .8s ease;
+        display: block;
+        margin: auto;         */
+    }
+
+    /*when the mouse is over the image the image will have opacity 100%*/
+    img.chords:hover{
+        width: 300px;
+        height: 300px;
+        /* opacity: 1.0;
+        filter: alpha(opacity=100);  
+        width: 150%;
+        height: 150%;   */
+    }
+    
+    body {     
+        background-image: url("/media/backgroundGuitar.jpg");
+        background-color: #cccccc;
+        width: 100%;	    
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .menu_bar{
+        display: none;
+    }
+
+    header{
+        width: 90%;
+    }    
+    
+    nav {
+        overflow:scroll;
+        background: #023859;
+        z-index: 1000;
+        max-width: 1000px;        
+        margin: 20px auto;     
+        
+        width: 80%;
+        height: calc(100%-80px);
+        position: fixed;
+        right: 100%;
+        margin: 0;
+        
+    }
+
+    nav ul{
+        list-style: none;
+    }    
+    
+    nav ul li {
+        position: relative;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,.5);
+    }
+    
+    nav ul li a{
+        color:white;
+        display: block;
+        text-decoration: none;
+        padding: 20px;
+    }
+
+    nav ul li a span{
+        margin-right: 10px;
+    }
+
+    nav ul li:hover {
+        background: #000;
+    }
+
+    nav ul li:hover .children {
+        display: block;
+    } 
+     
+    nav ul li .children {
+    display: none;
+    background: #011826;
+    position: absolute;
+    width: 150%;
+    z-index: 1000;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+    }
+    
+    nav ul li .children li{
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    }   
+    
+    .caret{
+        float: right;
+        position: relative;
+        top: 3px;
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    
+    .logo{
+        display: none;
+    }
+
+    body{
+        padding-top: 80px;
+    }
+    
+    .menu_bar{
+        right: 0;
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background: #000;
+    }
+    
+    .menu_bar .bt-menu {
+        display: block;
+        padding: 20px;
+        color: #fff;
+        overflow: hidden;
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .menu_bar span {
+        float: right;
+        font-size: 40px;
+    }     
+}

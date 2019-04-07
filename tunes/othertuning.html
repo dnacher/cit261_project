@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">   
+        <head>             
+            <title>Other tuning</title>
+            <link rel="stylesheet" href="../css/normalize.css" type="text/css" media="screen">
+            <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen"/>
+            <script src="../js/script.js"></script>
+            <script src="../js/menu.js"></script>
+            <meta name="description" content="This page will see other ways to tune you guitar">
+            <meta name="keywords" content="GuitartunesAlternative, alternativeTunes, openD, openG, othertunes">   
+            <script>
+
+
+                //this function to create a Table from a JSON is from this page:
+                // https://www.encodedna.com/javascript/populate-json-data-to-html-table-using-javascript.htm
+                 function createTableFromJSON(list) {
+        
+                    // EXTRACT VALUE FOR HTML HEADER. 
+                    var col = [];
+                    for (var i = 0; i < list.length; i++) {
+                        for (var key in list[i]) {
+                            if (col.indexOf(key) === -1) {
+                                col.push(key);
+                            }
+                        }
+                    }
+
+                    var table = document.createElement("table");
+
+                    // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+                    var tr = table.insertRow(-1);                   // TABLE ROW.
+
+                    for (var i = 0; i < col.length; i++) {
+                        var th = document.createElement("th");      // TABLE HEADER.
+                        th.innerHTML = col[i];
+                        tr.appendChild(th);
+                    }
+
+                    // ADD JSON DATA TO THE TABLE AS ROWS.
+                    for (var i = 0; i < list.length; i++) {
+                        tr = table.insertRow(-1);
+
+                        for (var j = 0; j < col.length; j++) {
+                            var tabCell = tr.insertCell(-1);
+                            tabCell.innerHTML = list[i][col[j]];
+                        }
+                    }
+
+                    // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+                    var divContainer = document.getElementById("tuningData");
+                    divContainer.innerHTML = "";
+                    divContainer.appendChild(table);
+                }
+
+                function getAllAjaxInfo(){
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var out="";
+                            var content = JSON.parse(this.responseText);
+                            createTableFromJSON(content);
+                    }
+                    };
+                    xhttp.open("GET", "https://api.myjson.com/bins/j7x30", true);
+                    xhttp.send(); 
+                }
+
+                function getAjaxInfoByName(){
+                    var name = document.getElementById("name").value;
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var out="";
+                            var content = JSON.parse(this.responseText);
+                            for(var i=0; i<content.length;i++){
+                                if(name == content[i].nameTune){
+                                    out +='<strong>' + content[i].nameTune + '</strong><br><br>' + content[i].Tune;
+                                }
+                            }
+                            document.getElementById("tuningData").innerHTML = out;
+                    }
+                    };
+                    xhttp.open("GET", "https://api.myjson.com/bins/j7x30", true);
+                    xhttp.send(); 
+                }
+            </script>     
+        </head>
+        <body>
+            <div class="body-othertunning">
+                <nav id="page-nav">  
+                        <div class="menu_bar">
+                            <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
+                        </div>
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="../mainpages/introduction.html" title="Introduction"><span class="first"></span>Introduction</a></li>
+                                    <li class="submenu"><a href="#" title="Tunes"><span class="third"></span>Tunes</a>
+                                        <ul class="children">
+                                            <li><a href="standardtuning.html" title="Standard Tune">Standard Tune</a></li>
+                                            <li><a href="othertuning.html" title="Other Tunes">Other Tunes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu"><a href="../chords/chords.html" title="Chords"><span class="third"></span>Chords</a>
+                                        <ul class="children">
+                                            <li><a href="../chords/nobarrechords.html" title="No Barre Chords">No Barre Chords</a></li>
+                                            <li><a href="../chords/barrechords.html" title="Barre Chords">Barre Chords</a></li>
+                                            <li><a href="../chords/minuschords.html" title="Minus Chords">Minus Chords</a></li>
+                                            <li><a href="../chords/chords7.html" title="7 Chords">7 Chords</a></li>
+                                            <li><a href="../chords/otherchords.html" title="Other Chords">Other Chords</a></li>
+                                            <li><a href="../chords/powerchords.html" title="Power Chords">Power Chords</a></li>
+                                            <li><a href="../chords/nachermethod.html" title="Nacher Method">Nacher Method</a></li>
+                                        </ul>
+                                    </li>        
+                                        <li class="logo"><a href="../index.html" title="main"><span class="main"><img id='logo' height="50" src="../media/images/logo.png" alt="guitar" title="guitar"/></span></a></li>
+                                    <li><a href="../mainpages/songs.html" title="Songs"><span class="forth"></span>Songs</a></li>
+                                    <li><a href="../mainpages/scales.html" title="Scales"><span class="second"></span>Scales</a></li>
+                                    <li><a href="../ajax/songs.html" title="songsAjax"><span class="fifth"></span>Your Songs here</a></li>
+                                </ul>
+                            </div>
+                    </nav>
+                <main>
+                    <div class="main-tunning">
+                        <p class="transbox">in this section you will have some alternative tuning for guitar
+                            as we read in the tunes page:</p>
+                            <select id="name">
+                                    <option value="openC">Open C</option>
+                                    <option value="openD">Open D</option>
+                                    <option value="modalD">Modal D</option>
+                                    <option value="openDm">Open D minor</option>
+                                    <option value="openG">Open G</option>
+                                    <option value="modalG">Modal G</option>
+                                  </select>
+                            <button class="button" onclick="getAjaxInfoByName()">get tunes by name!</button><br><br>
+                            <button class="button" onclick="getAllAjaxInfo()">get all tunes!</button><br><br><br>
+                            <p class="transbox" id="tuningData"></p>
+                    </div>
+                </main>
+                <footer>
+                        <div class="foot">    
+                            <div class="footer"> 
+                                <p>The images are from <a href="https://www.pexels.com/search/programming/">pexels.com</a> <a href="https://www.pexels.com/photo-license/">®</a></p>                             
+                                <div class="scr">
+                                    <script>
+                                        document.write("This page was last modified on: " + document.lastModified +"");
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>   
+            </div>
+        </body>     
+</html>
